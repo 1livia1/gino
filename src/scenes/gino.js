@@ -1,8 +1,12 @@
+function preload(s) {}
+
 const TERRA = "0xB96E54";
 const A_TERRENO = 96;
 const Y_TERRENO = 624;
+
 const VERDE = "0x72A11D";
 const ROSSO = "0xE44A4A";
+const GIALLO = "0xFFD95A";
 
 const X_GINO = 200;
 const L_GINO = 81;
@@ -13,14 +17,10 @@ const A_FUNGO = 63;
 
 let gino;
 let fungo;
-
-
-function preload(s) {}
-
-
 let terreno;
 
 function create(s) {
+    PP.shapes.arc_add(s, 1080, 130, 56, 0, 360, false, GIALLO, 1);
     crea_terreno(s);
     crea_gino(s); 
     crea_fungo(s);
@@ -61,6 +61,7 @@ function crea_fungo(s) {
         1
     );
 }
+
 
 function update(s) {}
 
