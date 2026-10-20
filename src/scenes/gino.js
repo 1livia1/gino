@@ -27,39 +27,26 @@ function create(s) {
 }
 
 function crea_terreno(s) {
-    terreno = PP.shapes.rectangle_add(
-        s,
-        LARGHEZZA / 2,
-        Y_TERRENO + A_TERRENO / 2,
-        LARGHEZZA,
-        A_TERRENO,
-        TERRA,
-        1
-    );
+    terreno = PP.shapes.rectangle_add(s,
+        LARGHEZZA / 2, Y_TERRENO + A_TERRENO / 2,
+        LARGHEZZA, A_TERRENO, TERRA, 1 );
+    PP.physics.add(s, terreno, PP.physics.type.STATIC)
 }
 
 function crea_gino(s) {
-    gino = PP.shapes.rectangle_add(
-        s,
-        X_GINO,
-        Y_TERRENO - A_GINO / 2,
-        L_GINO,
-        A_GINO,
-        VERDE,
-        1
-    );
+    gino = PP.shapes.rectangle_add(s,
+        X_GINO, Y_TERRENO - A_GINO / 2,
+        L_GINO, A_GINO, VERDE, 1 );
+    PP.physics.add(s, gino, PP.physics.type.DYNAMIC);
+    PP.physics.set_collide_world_bounds(gino, true);
+    PP.physics.add_collider(s, gino, terreno);
 }
 
 function crea_fungo(s) {
     fungo = PP.shapes.rectangle_add(
         s,
-        LARGHEZZA * 3 / 4,
-        Y_TERRENO - A_FUNGO / 2,
-        L_FUNGO,
-        A_FUNGO,
-        ROSSO,
-        1
-    );
+        LARGHEZZA * 3 / 4, Y_TERRENO - A_FUNGO / 2,
+        L_FUNGO, A_FUNGO, ROSSO, 1 );
 }
 
 
