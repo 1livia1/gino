@@ -176,9 +176,7 @@ function update(s) {
 }
 function resetta_fungo() {
     fungo.geometry.x =
-        LARGHEZZA
-        + L_FUNGO / 2
-        + Math.random() * DISTANZA_MAX;
+        LARGHEZZA + L_FUNGO / 2 + Math.random() * DISTANZA_MAX;
     PP.physics.set_velocity_x(fungo, -vel_fungo);
 }
 function salta(s) {
