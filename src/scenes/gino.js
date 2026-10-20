@@ -62,9 +62,7 @@ function crea_gino(s) {
     gino = PP.assets.image.add(s, img_gino,
     X_GINO, Y_TERRENO - A_GINO / 2, 0.5, 0.5);
     // 加物理body受重力影响//
-    PP.physics.add(
-        s,
-        gino,
+    PP.physics.add(s,gino,
         PP.physics.type.DYNAMIC
     );
     PP.physics.set_collide_world_bounds(gino,true);
